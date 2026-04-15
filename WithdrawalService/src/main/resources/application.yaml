@@ -9,3 +9,5 @@ spring:
       isolation-level: read_committed
       properties:
         spring.json.trusted.packages: com.appsdeveloperblog.*
+    producer:
+      value-serializer: org.apache.kafka.common.serialization.ByteArraySerializer

@@ -1,5 +1,6 @@
 package com.appsdeveloperblog.estore.WithdrawalService.handler;
 
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.kafka.annotation.KafkaHandler;
@@ -11,11 +12,11 @@ import com.appsdeveloperblog.payments.ws.core.events.WithdrawalRequestedEvent;
 
 @Component
 @KafkaListener(topics = "withdraw-money-topic", containerFactory = "kafkaListenerContainerFactory")
+@Slf4j
 public class WithdrawalRequestedEventHandler {
-    private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
 
     @KafkaHandler
     public void handle(@Payload WithdrawalRequestedEvent withdrawalRequestedEvent) {
-        LOGGER.info("Received a new withdrawal event: {} ", withdrawalRequestedEvent.getAmount());
+        log.info("Received a new withdrawal event: {} ", withdrawalRequestedEvent.getAmount());
     }
 }

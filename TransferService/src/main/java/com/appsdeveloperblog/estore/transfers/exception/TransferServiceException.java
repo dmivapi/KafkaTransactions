@@ -1,4 +1,4 @@
-package com.appsdeveloperblog.estore.transfers.error;
+package com.appsdeveloperblog.estore.transfers.exception;
 
 public class TransferServiceException extends RuntimeException {
     public TransferServiceException(Throwable cause) {

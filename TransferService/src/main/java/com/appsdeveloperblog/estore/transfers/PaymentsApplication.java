@@ -3,6 +3,7 @@ package com.appsdeveloperblog.estore.transfers;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.web.client.RestClient;
 import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
@@ -13,7 +14,7 @@ public class PaymentsApplication {
 	}
 
 	@Bean
-	RestTemplate getRestTemplate() {
-		return new RestTemplate();
+	RestClient getRestTemplate(RestClient.Builder builder) {
+		return builder.build();
 	}
 }

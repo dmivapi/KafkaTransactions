@@ -8,6 +8,8 @@ spring:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JacksonJsonSerializer
       acks: all
+#     use of random just for learning, in production can use pod name.
+      transaction-id-prefix: "transfer-service-${random.value}-"
       properties:
         delivery.timeout.ms: 120000
         linger.ms: 0
@@ -16,5 +18,12 @@ spring:
         enable.idempotence: true
 
 # Custom application properties
-withdraw-money-topic: withdraw-money-topic
-deposit-money-topic: deposit-money-topic
+app:
+  kafka:
+    withdraw-money-topic: withdraw-money-topic
+    deposit-money-topic: deposit-money-topic
+
+logging:
+  level:
+    org.springframework.kafka.transaction: TRACE
+    org.springframework.transaction: TRACE

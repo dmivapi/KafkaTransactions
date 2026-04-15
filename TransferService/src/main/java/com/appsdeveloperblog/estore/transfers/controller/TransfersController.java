@@ -1,4 +1,4 @@
-package com.appsdeveloperblog.estore.transfers.ui;
+package com.appsdeveloperblog.estore.transfers.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 

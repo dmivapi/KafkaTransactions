@@ -9,6 +9,6 @@ import java.math.BigDecimal;
 @Setter
 public class TransferRestModel {
     private String senderId;
-    private String recepientId;
+    private String recipientId;
     private BigDecimal amount;
 }

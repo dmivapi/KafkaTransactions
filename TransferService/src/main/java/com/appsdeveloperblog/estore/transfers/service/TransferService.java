@@ -1,7 +1,7 @@
 package com.appsdeveloperblog.estore.transfers.service;
 
-import com.appsdeveloperblog.estore.transfers.model.TransferRestModel;
+import com.appsdeveloperblog.estore.transfers.dto.TransferRequest;
 
 public interface TransferService {
-    public boolean transfer(TransferRestModel productPaymentRestModel);
+    public boolean transfer(TransferRequest productPaymentRestModel);
 }

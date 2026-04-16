@@ -16,7 +16,12 @@ spring:
         request.timeout.ms: 30000
         max.in.flight.requests.per.connection: 5
         enable.idempotence: true
-
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:transdb
+  h2:
+    console:
+      enabled: true
 # Custom application properties
 app:
   kafka:
@@ -25,5 +30,7 @@ app:
 
 logging:
   level:
-    org.springframework.kafka.transaction: TRACE
-    org.springframework.transaction: TRACE
+    org.springframework.kafka.transaction.KafkaTransactionManager: DEBUG
+    org.springframework.transaction: DEBUG
+    org.springframework.orm.jpa.JpaTransactionManager: DEBUG
+    org.apache.kafka.clients.producer.internals.TransactionManager: DEBUG

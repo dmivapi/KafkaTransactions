@@ -17,6 +17,6 @@ public class WithdrawalRequestedEventHandler {
 
     @KafkaHandler
     public void handle(@Payload WithdrawalRequestedEvent withdrawalRequestedEvent) {
-        log.info("Received a new withdrawal event: {} ", withdrawalRequestedEvent.getAmount());
+        log.info("Received a new withdrawal event: {} ", withdrawalRequestedEvent.amount());
     }
 }

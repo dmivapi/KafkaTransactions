@@ -16,6 +16,6 @@ public class DepositRequestedEventHandler {
 
 	@KafkaHandler
 	public void handle(@Payload DepositRequestedEvent depositRequestedEvent) {
-		LOGGER.info("Received a new deposit event: {} ", depositRequestedEvent.getAmount());
+		LOGGER.info("Received a new deposit event: {} ", depositRequestedEvent.amount());
 	}
 }

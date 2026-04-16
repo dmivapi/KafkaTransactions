@@ -2,7 +2,7 @@ package com.appsdeveloperblog.estore.transfers.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 
-import com.appsdeveloperblog.estore.transfers.model.TransferRestModel;
+import com.appsdeveloperblog.estore.transfers.dto.TransferRequest;
 import com.appsdeveloperblog.estore.transfers.service.TransferService;
 
 import org.slf4j.Logger;
@@ -22,7 +22,7 @@ public class TransfersController {
     }
 
     @PostMapping()
-    public boolean transfer(@RequestBody TransferRestModel transferRestModel) {
-        return transferService.transfer(transferRestModel);
+    public boolean transfer(@RequestBody TransferRequest transferRequest) {
+        return transferService.transfer(transferRequest);
     }
 }
